@@ -44,7 +44,6 @@ end
 
 
 post "/api/newscore" do
-	time = Time.now
 	return halt 403, "Invalid secret provided" if params[:secret] != ENV["SECRET"]
 
 	score = params[:score].to_i
