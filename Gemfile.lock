@@ -1,0 +1,42 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bcrypt (3.1.16)
+    bson (4.12.1)
+    date (3.2.0)
+    json (2.6.1)
+    mongo (2.16.0)
+      bson (>= 4.8.2, < 5.0.0)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    open-uri (0.2.0)
+      stringio
+      time
+      uri
+    rack (2.2.3)
+    rack-protection (2.1.0)
+      rack
+    ruby2_keywords (0.0.5)
+    sinatra (2.1.0)
+      mustermann (~> 1.0)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
+      tilt (~> 2.0)
+    stringio (3.0.1)
+    tilt (2.0.10)
+    time (0.2.0)
+      date
+    uri (0.11.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  bcrypt (~> 3.1)
+  json (~> 2.6)
+  mongo (~> 2.16)
+  open-uri (~> 0.2)
+  sinatra (~> 2.1)
+
+BUNDLED WITH
+   2.2.7
