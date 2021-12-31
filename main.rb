@@ -9,17 +9,23 @@ set :bind, "0.0.0.0"
 FlaptusDB = Mongo::Client.new(ENV["mongouri"], database: "flaptus")[:leaderboard]
 
 
+def get_scores
+	FlaptusDB.find({}, sort: { score: -1 }).map do |col|
+		{
+			score:    col[:score],
+			username: col[:username]
+		}
+	end
+end
+
 get "/" do
-	"W.I.P."
+	@scores = get_scores
+
+	erb :index
 end
 
 get "/api/leaderboard" do
-	FlaptusDB.find({}, sort: { score: -1 }).map do |col|
-		{
-			score:   col[:score],
-			username: col[:username]
-		}
-	end.to_json
+	get_scores.to_json
 end
 
 post "/api/newuser" do

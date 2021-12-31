@@ -1,0 +1,75 @@
+	<nav>
+	<div class="img"></div>
+
+	<h1>Flaptus Leaderboard</h1>
+
+	<a href="https://download.flaptus.com">
+			<button></button>
+		</a>
+	</nav>
+	
+	
+
+<main>
+	<table>
+		<tr class="header">
+			<th>Rank</th>
+			<th>Username</th>
+			<th>Score</th>
+		</tr>
+
+		<% @scores[0..9].each_with_index do |user, index| %>
+			<tr>
+				<td><%= index + 1%>.</td>
+				<td><%= user[:username] %></td>
+				<td><%= user[:score] %></td>
+			</tr>
+		<% end %>
+
+		<tr>
+			<td colspan="3">
+				<button id="left"><ion-icon name="arrow-back-outline"></ion-icon></button>
+				<span>Page 1 of <%= (@scores.length / 10.0).ceil %></span>
+				<button id="right"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+			</td>
+		</tr>
+	</table>
+
+	
+	<script src="/js/table.js"></script>
+</main>
+
+<section class="footer" id="footer">
+	<div class="logo">
+		<h1>Flaptus</h1>
+
+
+	</div>
+
+	<div class="feedback">
+		<h3>Feedback? Bugs?!</h3>
+
+		<p>If you have any constructive feedback, or want to report some nasty bugs, make an issue on <a href="https://github.com/Flaptus/Flaptus"><span>the repo</span></a>.</p>
+	</div>
+
+
+	<div class="links">
+		<a href="https://flaptus.com/#gameplay"><span>Gameplay</span></a>
+		
+		<a href="https://flaptus.com/#how"><span>How</span></a>
+
+		<a href="https://flaptus.com/#leaderboard"><span>Leaderboard</span></a>
+
+		<a href="https://flaptus.com/#coming-soon"><span>Coming soon</span></a>
+
+		<a href="https://flaptus.com/#ready"><span>Ready</span></a>
+
+		<a href="https://github.com/Flaptus"><span>Source code</span></a>
+	</div>
+
+	<div class="play">
+		<a href="https://download.flaptus.com">
+			<button>Play now!</button>
+		</a>
+	</div>
+</section>
