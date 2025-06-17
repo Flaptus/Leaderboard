@@ -1,32 +1,46 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    base64 (0.2.0)
     bcrypt (3.1.16)
     bson (4.12.1)
-    date (3.2.0)
+    date (3.4.1)
     json (2.6.1)
+    logger (1.6.5)
     mongo (2.16.0)
       bson (>= 4.8.2, < 5.0.0)
-    mustermann (1.1.1)
+    mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
-    open-uri (0.2.0)
+    nio4r (2.7.4)
+    open-uri (0.5.0)
       stringio
       time
       uri
-    rack (2.2.3)
-    rack-protection (2.1.0)
-      rack
+    puma (6.6.0)
+      nio4r (~> 2.0)
+    rack (3.1.9)
+    rack-protection (4.1.1)
+      base64 (>= 0.1.0)
+      logger (>= 1.6.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.1.0)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0)
+    rackup (2.2.1)
+      rack (>= 3)
     ruby2_keywords (0.0.5)
-    sinatra (2.1.0)
-      mustermann (~> 1.0)
-      rack (~> 2.2)
-      rack-protection (= 2.1.0)
+    sinatra (4.1.1)
+      logger (>= 1.6.0)
+      mustermann (~> 3.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.1.1)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    stringio (3.0.1)
-    tilt (2.0.10)
-    time (0.2.0)
+    stringio (3.1.7)
+    tilt (2.6.0)
+    time (0.4.1)
       date
-    uri (0.11.0)
+    uri (1.0.3)
 
 PLATFORMS
   x86_64-linux
@@ -35,8 +49,10 @@ DEPENDENCIES
   bcrypt (~> 3.1)
   json (~> 2.6)
   mongo (~> 2.16)
-  open-uri (~> 0.2)
-  sinatra (~> 2.1)
+  open-uri (~> 0.5)
+  puma (~> 6.6)
+  rackup (~> 2.2)
+  sinatra (~> 4.1)
 
 BUNDLED WITH
    2.2.7
